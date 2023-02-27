@@ -13,6 +13,6 @@ module.exports = {
   },
   rules: {
     quotes: [2, "double", { avoidEscape: true }],
-    semi: ["error", "always"],
+    //semi: ["error", "always"],
   },
 };

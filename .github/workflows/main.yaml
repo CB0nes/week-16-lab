@@ -50,15 +50,16 @@ jobs:
           npm run lint
 
       # TODO: add supply chain scanning
-      testInsecure:
-        runs-on: ubuntu-latest
-        steps:
-          - uses: actions/checkout@v3
-          - name: Run npm audit
-            working-directory: insecure
-            run: npm i --package-lock-only; npm audit
-      # TODO: add unit testing
+      - name: Run npm audit
+        uses: actions/checkout@v3
+        working-directory: app
+        run: npm i --package-lock-only; npm audit
 
+      # TODO: add unit testing
+      - name: Check Language thingy
+        uses: actions/checkout@v3
+        working-directory: app/routes
+        run: npm install ; npm run test
       # TODO: add cloudformation linting
 
       # TODO: add deployment to cloudformation
